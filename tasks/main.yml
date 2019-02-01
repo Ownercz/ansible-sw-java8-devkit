@@ -1,0 +1,11 @@
+- name: install java devkit
+  yum:
+    name: java-1.8.0-openjdk,java-1.8.0-openjdk-devel
+    state: present
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: install java devkit
+  apt:
+    name: java-1.8.0-openjdk,java-1.8.0-openjdk-devel
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
